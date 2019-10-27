@@ -107,3 +107,36 @@ Los Readable y Writeable streams tienen los siguientes eventos y funciones respe
 * write
 * end
 Recuerda que tienen estos eventos porque los heredan de la clase EventEmitter.
+
+## Express
+### ¿Qué es?
+Es un framework para crear aplicaciones web, web services o web APIs, lo interesante de express es que free open source bajo la licencia MIT, y fue inspirada por el framework Sinatra escrito en Ruby por TJ Holowaychuk 
+![express](./md/express-1.jpg)
+
+### Un poco de Historia
+En el 2014 los derechos de express fueron adquiridos por StrongLoop
+En el 2015 StrongLopp fue adquirido por IBM
+En el 2016 tuvimos la buena noticia de que express seria dirigido por la node js foundation
+![express](./md/express-2.jpg)
+
+### Características
+![express](./md/express-3.jpg)
+
+## Rest
+![rest](./md/express-8.jpg)
+
+### Anatomia de una API Restful
+Representational State Transfer  es un estilo de arquitectura para construir web services
+
+![rest](./md/express-4.jpg)
+
+### ¿De qué se trata REST?
+
+![rest](./md/express-5.jpg)
+
+## CRUD
+![rest](./md/express-6.jpg)
+
+### Creacion de rutas
+![rest](./md/express-7.jpg)
+
