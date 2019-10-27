@@ -140,3 +140,17 @@ Representational State Transfer  es un estilo de arquitectura para construir web
 ### Creacion de rutas
 ![rest](./md/express-7.jpg)
 
+### Implementando una capa de servicios
+La tradicional arquitectura MVC se queda corta en las aplicaciones modernas
+En una  aplicación en express
+* Controllers
+  * Es toda la capa del middleware y del router que se comunican con el API y reciben o encian JSON
+* Servicios
+ * En esta capa se encuentra toda la lógica de negocios, es importante saber que los controladores no llaman otros    controladores, solo llaman servicios pero los servicios si pueden llamar otros servicios o llamar librerias
+* Librerias
+  * Las librerias son las capa que estan adjuntas a librerias externas com BD, BD en la nube o otras APIs
+
+![rest](./md/express-9.jpg)
+
+### Resumen
+![rest](./md/express-10.jpg)
