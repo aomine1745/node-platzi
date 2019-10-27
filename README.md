@@ -146,7 +146,7 @@ En una  aplicación en express
 * Controllers
   * Es toda la capa del middleware y del router que se comunican con el API y reciben o encian JSON
 * Servicios
- * En esta capa se encuentra toda la lógica de negocios, es importante saber que los controladores no llaman otros    controladores, solo llaman servicios pero los servicios si pueden llamar otros servicios o llamar librerias
+  * En esta capa se encuentra toda la lógica de negocios, es importante saber que los controladores no llaman otros controladores, solo llaman servicios pero los servicios si pueden llamar otros servicios o llamar librerias
 * Librerias
   * Las librerias son las capa que estan adjuntas a librerias externas com BD, BD en la nube o otras APIs
 
