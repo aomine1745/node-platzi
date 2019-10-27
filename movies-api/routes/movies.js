@@ -67,6 +67,22 @@ function moviesApi (app) {
     }
   })
 
+  router.patch('/:movieId', async (req, res, next) => {
+    const { movieId } = req.params
+    const { body: movie } = req
+
+    try {
+      const updatedMovieId = await moviesService.patchMovie({ movieId, movie })
+
+      res.status(200).json({
+        data: updatedMovieId,
+        message: 'movie patched'
+      })
+    } catch (error) {
+      next(error)
+    }
+  })
+
   router.delete('/:movieId', async (req, res, next) => {
     const { movieId } = req.params
 
