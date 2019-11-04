@@ -11,6 +11,7 @@ function moviesApi (app) {
 
     try {
       const movies = await moviesService.getMovies({ tags })
+      throw new Error('error pendejo por pendejo :v')
 
       res.status(200).json({
         data: movies,

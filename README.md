@@ -150,7 +150,28 @@ En una  aplicación en express
 * Librerias
   * Las librerias son las capa que estan adjuntas a librerias externas com BD, BD en la nube o otras APIs
 
-![rest](./md/express-9.jpg)
-
+![rest](./md/express-9.jpg)v
 ### Resumen
 ![rest](./md/express-10.jpg)
+## Data Base MongoDB
+![data](./md/express-11.jpg)
+### Implementando acciones con Mongo
+![data](./md/express-12.jpg)
+### Acciones con Mongo
+![data](./md/express-13.jpg)
+### Resumen
+![data](./md/express-14.jpg)
+## Middleware
+### ¿Qué es un middleware?
+![middleware](./md/express-14.jpg)
+
+Es una pieza de software que esta en medio de otras dos, se le  suele describir como software glue(pegamento de software) y es porque ayuda a conectar otras piesas de software.
+
+![middleware](./md/express-16.jpg)
+##### next()
+Nos permite hacer cualquier ejecución de código, y la manera como llamamos al siguiente middleware es ejecutando esta funcionalidad
+Si por alguna razón le pasamos un parametro se ejecutaran los middleware de error
+### Middleware de error
+![middleware](./md/express-17.jpg)
+Estos reciben un cuarto parametro en la primera posición que sera el error
+ 

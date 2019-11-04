@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "set DEBUG=app:* && nodemon index",
-    "start": "NODE_ENV=production node index"
+    "start": "set NODE_ENV=production&& node index"
   },
   "keywords": [
     "apiForPlatziVideo"
@@ -16,6 +16,7 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongodb": "^3.3.3",
     "multer": "^1.4.2"
   },
   "devDependencies": {
