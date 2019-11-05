@@ -11,6 +11,22 @@ const moviesMock = [
   { id: '10bf0f08-736f-4bca-afcb-c7d2dcc81018', title: 'Threads', year: 1989, cover: 'http://dummyimage.com/205x197.bmp/ff4444/ffffff', description: 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', duration: 1888, contentRating: 'G', source: 'https://myspace.com/sem/sed/sagittis/nam/congue.json?vulputate=commodo&elementum=vulputate&nullam=justo&varius=in&nulla=blandit&facilisi=ultrices&cras=enim&non=lorem&velit=ipsum&nec=dolor&nisi=sit&vulputate=amet&nonummy=consectetuer&maecenas=adipiscing&tincidunt=elit&lacus=proin&at=interdum&velit=mauris&vivamus=non&vel=ligula&nulla=pellentesque&eget=ultrices&eros=phasellus&elementum=id&pellentesque=sapien&quisque=in&porta=sapien&volutpat=iaculis&erat=congue&quisque=vivamus&erat=metus&eros=arcu&viverra=adipiscing&eget=molestie&congue=hendrerit&eget=at&semper=vulputate&rutrum=vitae&nulla=nisl&nunc=aenean&purus=lectus&phasellus=pellentesque&in=eget&felis=nunc&donec=donec&semper=quis&sapien=orci&a=eget&libero=orci&nam=vehicula&dui=condimentum&proin=curabitur&leo=in&odio=libero&porttitor=ut&id=massa&consequat=volutpat&in=convallis&consequat=morbi&ut=odio&nulla=odio&sed=elementum', tags: ['Drama'] }
 ]
 
+function filteredMoviesMock (tag) {
+  return moviesMock.filter(movie => movie.tags.includes(tag))
+}
+
+class MoviesServiceMock {
+  async getMovies () {
+    return Promise.resolve(moviesMock)
+  }
+
+  async createMovie () {
+    return Promise.resolve(moviesMock[0])
+  }
+}
+
 module.exports = {
-  moviesMock
+  moviesMock,
+  filteredMoviesMock,
+  MoviesServiceMock
 }

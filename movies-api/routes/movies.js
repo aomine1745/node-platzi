@@ -1,7 +1,16 @@
 const express = require('express')
 const MoviesService = require('../services/movies')
+const joi = require('@hapi/joi')
+const validationHandler = require('../utils/middleware/validationHandler')
+const {
+  movieIdSchema,
+  createMovieSchema,
+  updateMovieSchema
+} = require('../utils/schemas/movies')
+
 function moviesApi (app) {
   const router = express.Router()
+
   app.use('/api/movies', router)
 
   const moviesService = new MoviesService()
@@ -11,7 +20,6 @@ function moviesApi (app) {
 
     try {
       const movies = await moviesService.getMovies({ tags })
-      throw new Error('error pendejo por pendejo :v')
 
       res.status(200).json({
         data: movies,
@@ -22,7 +30,7 @@ function moviesApi (app) {
     }
   })
 
-  router.get('/:movieId', async (req, res, next) => {
+  router.get('/:movieId', validationHandler(joi.object({ movieId: movieIdSchema }), 'params'), async (req, res, next) => {
     const { movieId } = req.params
 
     try {
@@ -37,7 +45,7 @@ function moviesApi (app) {
     }
   })
 
-  router.post('/', async (req, res, next) => {
+  router.post('/', validationHandler(createMovieSchema), async (req, res, next) => {
     const { body: movie } = req
 
     try {
@@ -52,7 +60,7 @@ function moviesApi (app) {
     }
   })
 
-  router.put('/:movieId', async (req, res, next) => {
+  router.put('/:movieId', validationHandler(joi.object({ movieId: movieIdSchema }), 'params'), validationHandler(updateMovieSchema), async (req, res, next) => {
     const { movieId } = req.params
     const { body: movie } = req
 
@@ -84,7 +92,7 @@ function moviesApi (app) {
     }
   })
 
-  router.delete('/:movieId', async (req, res, next) => {
+  router.delete('/:movieId', validationHandler(joi.object({ movieId: movieIdSchema }), 'params'), async (req, res, next) => {
     const { movieId } = req.params
 
     try {

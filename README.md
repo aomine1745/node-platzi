@@ -173,5 +173,21 @@ Nos permite hacer cualquier ejecución de código, y la manera como llamamos al 
 Si por alguna razón le pasamos un parametro se ejecutaran los middleware de error
 ### Middleware de error
 ![middleware](./md/express-17.jpg)
+
 Estos reciben un cuarto parametro en la primera posición que sera el error
  
+ ## Joi y Boom
+![middleware](./md/express-18.jpg)
+
+Son tecnologias del ecosistema de Hapy.js pero son tan tan buenas que las vamos a integrar como middleware en nuestra app de express
+
+![middleware](./md/express-19.jpg)
+## Test
+![middleware](./md/express-20.jpg)
+### Test para nuestros endpoints
+![middleware](./md/express-21.jpg)
+#### Dependencias
+* mocha - nos ayuda a correr los test
+* supertest - levanta un server temporal para nuestros test
+* sinon - nos ayuda a crear mock
+* proxyrequire - nos ayuda a inyectar los mocks
